@@ -11,7 +11,9 @@ public class SearchGithub {
     void search() {
         open("https://github.com/selenide/selenide/");
         $("#wiki-tab").click();
-        $(byText("Soft assertions")).click();
+        $(".wiki-more-pages-link").$("button").click();
+        //$("details.details-reset").$("a").click();
+        $(byText("SoftAssertions")).click();
         $("div.markdown-body").shouldHave(text("3. Using JUnit5 extend test class:"));
     }
 
